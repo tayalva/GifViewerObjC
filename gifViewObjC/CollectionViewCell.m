@@ -19,7 +19,7 @@
 }
 
 
-// networking call to fetch trending gifs
+// networking call to fetch trending gif images
 
 -(void)downloadImageWithURL: (NSURL*)url{
     

@@ -19,9 +19,12 @@
     [super viewDidLoad];
     
     if ( self.giphy ) {
+        
         NSURLRequest *request = [NSURLRequest requestWithURL: self.giphy.animatedGifURL];
         [self.webView loadRequest:request];
+      
     }
+    
     
     [self setupGestures];
 }

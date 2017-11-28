@@ -31,7 +31,7 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
     
 }
 
-// Network call for the giphy api
+// Network call for the giphy api images
 
 -(void) refreshImages {
     
@@ -59,17 +59,18 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
         }
         } else {
             
-            NSLog(@"you have no internet stupid");
+
             dispatch_async(dispatch_get_main_queue(), ^{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Internet!"
-                                                            message:@"Please check your internet connection and try again."
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc]
+                    initWithTitle:@"No Internet!"
+                    message:@"Please check your internet connection and try again."
+                    delegate:self
+                    cancelButtonTitle:@"OK"
+                    otherButtonTitles:nil];
             [alert show];
             });
         }
-           NSLog(@"%@", self.giphys);
+        
         dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView reloadData];
             
@@ -125,16 +126,7 @@ static NSString * const reuseIdentifier = @"GifViewerCell";
     
     return cell;
 }
-// method that enables the collection view to be re-ordered
 
--(void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-
- 
-                            
-    
-}
-
-// method that retains the indexPath after moving a gif to another location
 
 
 
